@@ -4,3 +4,6 @@ import './profile-edit-password';
 import './producto';
 import './punto';
 import './puntos-ventum';
+import './locale';
+import './lugare';
+import './cliente';

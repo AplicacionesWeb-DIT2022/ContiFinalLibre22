@@ -1,0 +1,13 @@
+Admin
+
+user: administrator@brackets.sk
+password: VLAmn4KzJ1
+
+martin@admin.com
+martin123
+
+gabin@admin.com
+gabriel123
+
+diegomar@admin.com
+diego123

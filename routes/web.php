@@ -1,22 +1,9 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
@@ -62,14 +49,14 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('puntos')->name('puntos/')->group(static function() {
-            Route::get('/',                                             'PuntosController@index')->name('index');
-            Route::get('/create',                                       'PuntosController@create')->name('create');
-            Route::post('/',                                            'PuntosController@store')->name('store');
-            Route::get('/{punto}/edit',                                 'PuntosController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'PuntosController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{punto}',                                     'PuntosController@update')->name('update');
-            Route::delete('/{punto}',                                   'PuntosController@destroy')->name('destroy');
+        Route::prefix('locales')->name('locales/')->group(static function() {
+            Route::get('/',                                             'LocalesController@index')->name('index');
+            Route::get('/create',                                       'LocalesController@create')->name('create');
+            Route::post('/',                                            'LocalesController@store')->name('store');
+            Route::get('/{locale}/edit',                                'LocalesController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'LocalesController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{locale}',                                    'LocalesController@update')->name('update');
+            Route::delete('/{locale}',                                  'LocalesController@destroy')->name('destroy');
         });
     });
 });
@@ -77,14 +64,29 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('puntos-venta')->name('puntos-venta/')->group(static function() {
-            Route::get('/',                                             'PuntosVentaController@index')->name('index');
-            Route::get('/create',                                       'PuntosVentaController@create')->name('create');
-            Route::post('/',                                            'PuntosVentaController@store')->name('store');
-            Route::get('/{puntosVentum}/edit',                          'PuntosVentaController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'PuntosVentaController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{puntosVentum}',                              'PuntosVentaController@update')->name('update');
-            Route::delete('/{puntosVentum}',                            'PuntosVentaController@destroy')->name('destroy');
+        Route::prefix('lugares')->name('lugares/')->group(static function() {
+            Route::get('/',                                             'LugaresController@index')->name('index');
+            Route::get('/create',                                       'LugaresController@create')->name('create');
+            Route::post('/',                                            'LugaresController@store')->name('store');
+            Route::get('/{lugare}/edit',                                'LugaresController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'LugaresController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{lugare}',                                    'LugaresController@update')->name('update');
+            Route::delete('/{lugare}',                                  'LugaresController@destroy')->name('destroy');
+        });
+    });
+});
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('clientes')->name('clientes/')->group(static function() {
+            Route::get('/',                                             'ClientesController@index')->name('index');
+            Route::get('/create',                                       'ClientesController@create')->name('create');
+            Route::post('/',                                            'ClientesController@store')->name('store');
+            Route::get('/{cliente}/edit',                               'ClientesController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'ClientesController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{cliente}',                                   'ClientesController@update')->name('update');
+            Route::delete('/{cliente}',                                 'ClientesController@destroy')->name('destroy');
         });
     });
 });

@@ -29,21 +29,47 @@ $factory->define(App\Models\Producto::class, static function (Faker\Generator $f
         
         
     ];
-});
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\Punto::class, static function (Faker\Generator $faker) {
+});/** @var \Illuminate\Database\Eloquent\Factory $factory *//** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Locale::class, static function (Faker\Generator $faker) {
     return [
         
         
     ];
 });
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\PuntosVentum::class, static function (Faker\Generator $faker) {
+$factory->define(App\Models\Locale::class, static function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->sentence,
         'direccion' => $faker->sentence,
-        'descripcion' => $faker->sentence,
-        'codigo postal' => $faker->randomNumber(5),
+        'ciudad' => $faker->sentence,
+        'CP' => $faker->randomNumber(5),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Lugare::class, static function (Faker\Generator $faker) {
+    return [
+        'nombre' => $faker->sentence,
+        'direccion' => $faker->sentence,
+        'ciudad' => $faker->sentence,
+        'CP' => $faker->randomNumber(5),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Cliente::class, static function (Faker\Generator $faker) {
+    return [
+        'nombre' => $faker->sentence,
+        'apellido' => $faker->sentence,
+        'telefono' => $faker->sentence,
+        'direccion' => $faker->sentence,
+        'email' => $faker->email,
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
         
