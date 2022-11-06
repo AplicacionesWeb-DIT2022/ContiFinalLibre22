@@ -31,7 +31,7 @@
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                         <span class="text-white dark:text-white" style="font-size: 92px; margin: 41px 0;">
-                    Artesanias Patagonia</span>
+                    Artesanías Patagonia</span>
                 </div>
                 <div>
                     <span class="text-white dark:text-white" style="font-size: 42px; margin: 21px 0;">
