@@ -34,10 +34,13 @@ class ProductosController extends Controller
      * @return array|Factory|View
      */
     public function index(){
-        $data['productos']=Producto::paginate(100);
-        return response()->json(['success' => true, 'admin.producto.index' => $data], 200);
+        // $data['productos']=Producto::paginate(100);
+        $data['productos']= Producto::all();
+        return json_encode($data);
+        // return response()->json(['success' => true, 'admin.producto.index' => $data], 200);
     }
 
+    
     /**
      * Show the form for creating a new resource.
      *
