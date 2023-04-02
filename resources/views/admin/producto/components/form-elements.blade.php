@@ -31,3 +31,8 @@
 </div>
 
 
+@include('brackets/admin-ui::admin.includes.media-uploader', [
+    'mediaCollection' => app(App\Models\Producto::class)->getMediaCollection('gallery_producto'),
+    'media' => $producto->getThumbs200ForCollection('gallery_producto'),
+    'label' => 'Galería'
+])
