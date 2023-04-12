@@ -65,7 +65,9 @@ class ProductosController extends Controller
     {
         $this->authorize('admin.producto.create');
 
-        return view('admin.producto.create');
+        return view('admin.producto.create', [
+            'producto' => new Producto()
+        ]);
     }
 
     /**

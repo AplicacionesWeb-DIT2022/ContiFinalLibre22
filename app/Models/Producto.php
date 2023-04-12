@@ -65,4 +65,6 @@ class Producto extends Model implements HasMedia
 
         return $mediaUrls;
     }
+
+    
 }

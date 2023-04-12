@@ -10,8 +10,8 @@ Vue.component('producto-form', {
                 precio:  '' ,
                 cantidad:  '' ,
                 
-            }
+            },
+            mediaCollections: ['gallery_producto']
         }
     }
-
 });
