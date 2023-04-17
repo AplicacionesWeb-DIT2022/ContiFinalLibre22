@@ -10,8 +10,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\HasMedia;
 use Brackets\Media\HasMedia\HasMediaThumbsTrait;
 
-class Producto extends Model implements HasMedia
-{
+class Producto extends Model implements HasMedia{
     use ProcessMediaTrait;
     use AutoProcessMediaTrait;
     use HasMediaCollectionsTrait;
@@ -23,25 +22,30 @@ class Producto extends Model implements HasMedia
         'descripcion',
         'tipo',
         'precio',
-        'cantidad',
-    
-    ];
-    
-    
+        'cantidad'
+    ];    
     protected $dates = [
         'created_at',
-        'updated_at',
-    
+        'updated_at'
     ];
 
     protected $appends = ['resource_url', 'media_urls'];
 
+
+    // public function toJsonAPI()
+    // {
+    //     $producto = new \stdClass;
+    //     $producto->descripcion = $this->descripcion;
+    //     $producto->media_url = $this-> getMediaUrlsAttribute();
+    //     return $producto;
+    // }
+
     /* ************************** MEDIA ************************** */
 
     public function registerMediaCollections(): void {
-        $this->addMediaCollection('gallery_producto')
+        $this->addMediaCollection('gallery')
             ->accepts('image/*')
-            ->maxNumberOfFiles(20);
+            ->maxNumberOfFiles(3);
     }
     
     public function registerMediaConversions(Media $media = null): void{
@@ -51,8 +55,7 @@ class Producto extends Model implements HasMedia
 
     /* ************************ ACCESSOR ************************* */
 
-    public function getResourceUrlAttribute()
-    {
+    public function getResourceUrlAttribute(){
         return url('/admin/productos/'.$this->getKey());
     }
 
@@ -62,9 +65,6 @@ class Producto extends Model implements HasMedia
         $mediaUrls = $mediaItems->map(function (Media $media) {
             return $media->getFullUrl();
         });
-
         return $mediaUrls;
-    }
-
-    
+    }   
 }

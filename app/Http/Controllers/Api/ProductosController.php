@@ -35,8 +35,15 @@ class ProductosController extends Controller
      */
     public function index(){
         // $data['productos']=Producto::paginate(100);
-        $data['productos']= Producto::all();
+        $data['productos'] = Producto::all();
+        // $ListaProducto = array();
+        // foreach($data['productos'] as $producto)
+        //     {
+        //         array_push($ListaProducto, $producto->toJsonAPI());
+        //     }
         return json_encode($data);
+        // return response()->json(array("productos"=>$ListaProducto));
+
         // return response()->json(['success' => true, 'admin.producto.index' => $data], 200);
     }
 
@@ -66,12 +73,12 @@ class ProductosController extends Controller
         $sanitized = $request->getSanitized();
 
         // Store the Producto
-        $producto = Producto::create($sanitized);
+        // $producto = Producto::create($sanitized);
+        $producto = Producto::create($request->validated());
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/productos'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
-
         return redirect('admin/productos');
     }
 
@@ -85,8 +92,6 @@ class ProductosController extends Controller
     public function show(Producto $producto)
     {
         $this->authorize('admin.producto.show', $producto);
-
-        // TODO your code goes here
     }
 
     /**
@@ -99,8 +104,6 @@ class ProductosController extends Controller
     public function edit(Producto $producto)
     {
         $this->authorize('admin.producto.edit', $producto);
-
-
         return view('admin.producto.edit', [
             'producto' => $producto,
         ]);

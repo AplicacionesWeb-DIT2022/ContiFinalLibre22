@@ -82,7 +82,10 @@ class ProductosController extends Controller
         $sanitized = $request->getSanitized();
 
         // Store the Producto
-        $producto = Producto::create($sanitized);
+        // $producto = Producto::create($sanitized);
+        $producto = Producto::create($request->validated());
+
+        
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/productos'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];

@@ -9,9 +9,10 @@ Vue.component('producto-form', {
                 tipo:  '' ,
                 precio:  '' ,
                 cantidad:  '' ,
-                
+                title:  this.getLocalizedFormDefaults(),
+                perex:  this.getLocalizedFormDefaults()
             },
-            mediaCollections: ['gallery_producto']
+            mediaCollections: ['gallery']
         }
     }
 });
