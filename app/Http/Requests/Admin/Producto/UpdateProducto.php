@@ -30,7 +30,6 @@ class UpdateProducto extends FormRequest
             'tipo' => ['sometimes', 'string'],
             'precio' => ['sometimes', 'numeric'],
             'cantidad' => ['sometimes', 'integer']
-            // 'image' => "mimes:jpeg,jpg,png|10240"
         ];
     }
 

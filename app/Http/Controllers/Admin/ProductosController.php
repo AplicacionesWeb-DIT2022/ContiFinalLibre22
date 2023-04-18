@@ -85,21 +85,21 @@ class ProductosController extends Controller{
         // $producto = Producto::create($sanitized);
         $producto = Producto::create($request->validated());
 
-        // Obtener la imagen del formulario
-        $imagen = $request->file('galery');
-        // Crear una instancia de Intervention Image
-        $img = Image::make($imagen);
-        // Aplicar manipulaciones a la imagen (por ejemplo, redimensionar, recortar, etc.)
-        $img->resize(300, 200);
-        // Guardar la imagen en el sistema de archivos
-        $ruta = 'c://PROYECTO/imagen/' . time() . '.' . $imagen->getClientOriginalExtension();
-        $img->save($ruta);
-        // Guardar la ruta de la imagen en la base de datos u otro lugar necesario
+        // // Obtener la imagen del formulario
+        // $imagen = $request->file('galery');
+        // // Crear una instancia de Intervention Image
+        // $img = Image::make($imagen);
+        // // Aplicar manipulaciones a la imagen (por ejemplo, redimensionar, recortar, etc.)
+        // $img->resize(300, 200);
+        // // Guardar la imagen en el sistema de archivos
+        // $ruta = 'c://PROYECTO/imagen/' . time() . '.' . $imagen->getClientOriginalExtension();
+        // $img->save($ruta);
+        // // Guardar la ruta de la imagen en la base de datos u otro lugar necesario
 
-        // Retornar una respuesta
-        // return response()->json(['ruta' => $ruta]);
-        Log::info('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
-        Log::info($ruta);
+        // // Retornar una respuesta
+        // // return response()->json(['ruta' => $ruta]);
+        // Log::info('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
+        // Log::info($ruta);
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/productos'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];

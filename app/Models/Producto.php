@@ -25,8 +25,7 @@ class Producto extends Model implements HasMedia{
         'descripcion',
         'tipo',
         'precio',
-        'cantidad',
-        'imagen'
+        'cantidad'
     ];    
     protected $dates = [
         'created_at',
@@ -44,7 +43,6 @@ class Producto extends Model implements HasMedia{
         $producto->tipo = $this->tipo;
         $producto->precio = $this->precio;
         $producto->cantidad = $this->cantidad;
-        $producto->imagen = $this->imagen;
         // getMediaUrlsAttribute();
 
         return $producto;
