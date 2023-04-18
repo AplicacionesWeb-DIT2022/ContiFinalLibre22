@@ -37,7 +37,7 @@ class ProductosController extends Controller{
             $request,
 
             // set columns to query
-            ['id', 'descripcion', 'tipo', 'precio', 'cantidad','imagen'],
+            ['id', 'descripcion', 'tipo', 'precio', 'cantidad'],
 
             // set columns to searchIn
             ['id', 'descripcion', 'tipo']

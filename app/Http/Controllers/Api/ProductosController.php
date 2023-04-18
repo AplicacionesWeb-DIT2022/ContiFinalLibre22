@@ -26,14 +26,6 @@ use Illuminate\Support\Facades\Log;
 use Spatie\FlareClient\Api;
 
 class ProductosController extends Controller{
-
-
-
-
-
-
-
-    
     /**
      * Display a listing of the resource.
      *
