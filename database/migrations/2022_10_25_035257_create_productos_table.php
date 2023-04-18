@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('tipo');
             $table->double('precio');
             $table->integer('cantidad');
+            $table->string('imagen');
             $table->timestamps();
         });
     }

@@ -11,6 +11,7 @@ use App\Http\Requests\Admin\Producto\UpdateProducto;
 use App\Models\Producto;
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
+use Validator;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
@@ -24,9 +25,15 @@ use Illuminate\Support\Facades\Log;
 
 use Spatie\FlareClient\Api;
 
-class ProductosController extends Controller
-{
+class ProductosController extends Controller{
 
+
+
+
+
+
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -37,8 +44,7 @@ class ProductosController extends Controller
         // $data['productos']=Producto::paginate(100);
         $data['productos'] = Producto::all();
         // $ListaProducto = array();
-        // foreach($data['productos'] as $producto)
-        //     {
+        // foreach($data['productos'] as $producto){
         //         array_push($ListaProducto, $producto->toJsonAPI());
         //     }
         return json_encode($data);

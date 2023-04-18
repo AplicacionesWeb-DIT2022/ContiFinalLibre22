@@ -30,8 +30,13 @@
     </div>
 </div>
 
-@include('brackets/admin-ui::admin.includes.media-uploader', [
-    'mediaCollection' => app(App\Models\Producto::class)->getMediaCollection('gallery'),
-    'media' => $producto->getThumbs200ForCollection('gallery'),
-    'label' => 'Galería'
-])
+<div class="form-group row align-items-center">
+    <label for="imagen" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Imagen</label>
+        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        @include('brackets/admin-ui::admin.includes.media-uploader', [
+            'mediaCollection' => app(App\Models\Producto::class)->getMediaCollection('gallery'),
+            'media' => $producto->getThumbs200ForCollection('gallery'),
+            'label' => 'Galería'
+        ])
+    </div>
+</div>

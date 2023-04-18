@@ -4,17 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Brackets\Media\HasMedia\ProcessMediaTrait;
+use Brackets\Media\HasMedia\HasMediaThumbsTrait;
 use Brackets\Media\HasMedia\AutoProcessMediaTrait;
+
 use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\MediaLibrary\HasMedia;
-use Brackets\Media\HasMedia\HasMediaThumbsTrait;
+// use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Producto extends Model implements HasMedia{
     use ProcessMediaTrait;
     use AutoProcessMediaTrait;
     use HasMediaCollectionsTrait;
     use HasMediaThumbsTrait;
+    // use InteractsWithMedia;
 
     // protected $table = 'producto';
 
@@ -22,7 +25,8 @@ class Producto extends Model implements HasMedia{
         'descripcion',
         'tipo',
         'precio',
-        'cantidad'
+        'cantidad',
+        'imagen'
     ];    
     protected $dates = [
         'created_at',
@@ -32,13 +36,19 @@ class Producto extends Model implements HasMedia{
     protected $appends = ['resource_url', 'media_urls'];
 
 
-    // public function toJsonAPI()
-    // {
-    //     $producto = new \stdClass;
-    //     $producto->descripcion = $this->descripcion;
-    //     $producto->media_url = $this-> getMediaUrlsAttribute();
-    //     return $producto;
-    // }
+    public function toJsonAPI()
+    {
+        $producto = new \stdClass;
+        $producto->id = $this->id;
+        $producto->descripcion = $this->descripcion;
+        $producto->tipo = $this->tipo;
+        $producto->precio = $this->precio;
+        $producto->cantidad = $this->cantidad;
+        $producto->imagen = $this->imagen;
+        // getMediaUrlsAttribute();
+
+        return $producto;
+    }
 
     /* ************************** MEDIA ************************** */
 
@@ -49,7 +59,10 @@ class Producto extends Model implements HasMedia{
     }
     
     public function registerMediaConversions(Media $media = null): void{
-        $this->autoRegisterThumb200();
+        $this->autoRegisterThumb200()
+        ->addMediaConversion('thumb')
+        ->fit(Manipulations::FIT_MAX, 200, 200)
+        ->optimize();
     }
     
 
