@@ -228,5 +228,20 @@ return [
         ],
     ],
 
+    'productox' => [
+        'title' => 'Productox',
+
+        'actions' => [
+            'index' => 'Productox',
+            'create' => 'New Productox',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

@@ -84,3 +84,10 @@ $factory->define(App\Models\Post::class, static function (Faker\Generator $faker
         
     ];
 });
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Productox::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
