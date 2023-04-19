@@ -24,6 +24,7 @@ $factory->define(App\Models\Producto::class, static function (Faker\Generator $f
         'tipo' => $faker->sentence,
         'precio' => $faker->randomFloat,
         'cantidad' => $faker->randomNumber(5),
+        'imagen' => $faker->sentence,
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
         
@@ -72,6 +73,13 @@ $factory->define(App\Models\Cliente::class, static function (Faker\Generator $fa
         'email' => $faker->email,
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Post::class, static function (Faker\Generator $faker) {
+    return [
         
         
     ];
