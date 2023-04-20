@@ -1,20 +1,20 @@
 @extends('brackets/admin-ui::admin.layout.default')
 
-@section('title', trans('admin.producto.actions.index'))
+@section('title', trans('admin.mercaderium.actions.index'))
 
 @section('body')
 
-    <producto-listing
+    <mercaderium-listing
         :data="{{ $data->toJson() }}"
-        :url="'{{ url('admin/productos') }}'"
+        :url="'{{ url('admin/mercaderia') }}'"
         inline-template>
 
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-align-justify"></i> {{ trans('admin.producto.actions.index') }}
-                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{ url('admin/productos/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.producto.actions.create') }}</a>
+                        <i class="fa fa-align-justify"></i> {{ trans('admin.mercaderium.actions.index') }}
+                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{ url('admin/mercaderia/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.mercaderium.actions.create') }}</a>
                     </div>
                     <div class="card-body" v-cloak>
                         <div class="card-block">
@@ -49,22 +49,23 @@
                                             </label>
                                         </th>
 
-                                        <th is='sortable' :column="'id'">{{ trans('admin.producto.columns.id') }}</th>
-                                        <th is='sortable' :column="'descripcion'">{{ trans('admin.producto.columns.descripcion') }}</th>
-                                        <th is='sortable' :column="'detalle'">{{ trans('admin.producto.columns.detalle') }}</th>
-                                        <th is='sortable' :column="'tipo'">{{ trans('admin.producto.columns.tipo') }}</th>
-                                        <th is='sortable' :column="'precio'">{{ trans('admin.producto.columns.precio') }}</th>
-                                        <th is='sortable' :column="'cantidad'">{{ trans('admin.producto.columns.cantidad') }}</th>
-                                        <th is='sortable' :column="'urlimagen'">{{ trans('admin.producto.columns.urlimagen') }}</th>
+                                        <th is='sortable' :column="'id'">{{ trans('admin.mercaderium.columns.id') }}</th>
+                                        <th is='sortable' :column="'descripcion'">{{ trans('admin.mercaderium.columns.descripcion') }}</th>
+                                        <th is='sortable' :column="'detalle'">{{ trans('admin.mercaderium.columns.detalle') }}</th>
+                                        <th is='sortable' :column="'urlimagen'">{{ trans('admin.mercaderium.columns.urlimagen') }}</th>
+                                        <th is='sortable' :column="'tipo'">{{ trans('admin.mercaderium.columns.tipo') }}</th>
+                                        <th is='sortable' :column="'precio'">{{ trans('admin.mercaderium.columns.precio') }}</th>
+                                        <th is='sortable' :column="'cantidad'">{{ trans('admin.mercaderium.columns.cantidad') }}</th>
+
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="7">
-                                            <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/productos')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
+                                        <td class="bg-bulk-info d-table-cell text-center" colspan="9">
+                                            <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/mercaderia')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
                                                         href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
                                             <span class="pull-right pr-2">
-                                                <button class="btn btn-sm btn-danger pr-3 pl-3" @click="bulkDelete('/admin/productos/bulk-destroy')">{{ trans('brackets/admin-ui::admin.btn.delete') }}</button>
+                                                <button class="btn btn-sm btn-danger pr-3 pl-3" @click="bulkDelete('/admin/mercaderia/bulk-destroy')">{{ trans('brackets/admin-ui::admin.btn.delete') }}</button>
                                             </span>
 
                                         </td>
@@ -81,10 +82,11 @@
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.descripcion }}</td>
                                         <td>@{{ item.detalle }}</td>
+                                        <td>@{{ item.urlimagen }}</td>
                                         <td>@{{ item.tipo }}</td>
                                         <td>@{{ item.precio }}</td>
                                         <td>@{{ item.cantidad }}</td>
-                                        <td>@{{ item.urlimagen }}</td>                                        
+                                        
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">
@@ -112,13 +114,13 @@
                                 <i class="icon-magnifier"></i>
                                 <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
                                 <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
-                                <a class="btn btn-primary btn-spinner" href="{{ url('admin/productos/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.producto.actions.create') }}</a>
+                                <a class="btn btn-primary btn-spinner" href="{{ url('admin/mercaderia/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.mercaderium.actions.create') }}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </producto-listing>
+    </mercaderium-listing>
 
 @endsection

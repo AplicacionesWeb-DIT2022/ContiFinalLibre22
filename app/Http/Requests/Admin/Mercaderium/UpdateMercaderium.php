@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Admin\Producto;
+namespace App\Http\Requests\Admin\Mercaderium;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class StoreProducto extends FormRequest
+class UpdateMercaderium extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class StoreProducto extends FormRequest
      */
     public function authorize(): bool
     {
-        return Gate::allows('admin.producto.create');
+        return Gate::allows('admin.mercaderium.edit', $this->mercaderium);
     }
 
     /**
@@ -26,23 +26,25 @@ class StoreProducto extends FormRequest
     public function rules(): array
     {
         return [
-            'descripcion' => ['required', 'string'],
-            'tipo' => ['required', 'string'],
-            'detalle' => ['string'],
-            'urlimage' => ['string'],
-            'precio' => ['required', 'numeric'],
-            'cantidad' => ['required', 'integer'],
+            'descripcion' => ['sometimes', 'string'],
+            'detalle' => ['sometimes', 'string'],
+            'urlimagen' => ['sometimes', 'string'],
+            'tipo' => ['sometimes', 'string'],
+            'precio' => ['sometimes', 'numeric'],
+            'cantidad' => ['sometimes', 'integer'],
+            
         ];
     }
 
     /**
-    * Modify input data
-    *
-    * @return array
-    */
+     * Modify input data
+     *
+     * @return array
+     */
     public function getSanitized(): array
     {
         $sanitized = $this->validated();
+
 
         //Add your code for manipulation with request data here
 

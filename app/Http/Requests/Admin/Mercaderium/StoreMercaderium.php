@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests\Admin\Producto;
+namespace App\Http\Requests\Admin\Mercaderium;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
-class StoreProducto extends FormRequest
+class StoreMercaderium extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -15,7 +15,7 @@ class StoreProducto extends FormRequest
      */
     public function authorize(): bool
     {
-        return Gate::allows('admin.producto.create');
+        return Gate::allows('admin.mercaderium.create');
     }
 
     /**
@@ -27,11 +27,12 @@ class StoreProducto extends FormRequest
     {
         return [
             'descripcion' => ['required', 'string'],
+            'detalle' => ['required', 'string'],
+            'urlimagen' => ['required', 'string'],
             'tipo' => ['required', 'string'],
-            'detalle' => ['string'],
-            'urlimage' => ['string'],
             'precio' => ['required', 'numeric'],
             'cantidad' => ['required', 'integer'],
+            
         ];
     }
 

@@ -8,3 +8,4 @@ import './locale';
 import './lugare';
 import './cliente';
 import './productox';
+import './mercaderium';

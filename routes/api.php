@@ -7,4 +7,6 @@ use App\Http\Controllers\Api\ProductosController;
 use App\Http\Controllers\Api\LugaresController;
 
 Route::get('/producto', [ProductosController::class, 'index']);
+Route::get('/productox', [ProductosController::class, 'index']);
+
 Route::get('/lugare', [LugaresController::class, 'index']);

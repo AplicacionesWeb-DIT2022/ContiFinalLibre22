@@ -6,6 +6,22 @@
     </div>
 </div>
 
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('detalle'), 'has-success': fields.detalle && fields.detalle.valid }">
+    <label for="detalle" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.producto.columns.detalle') }}</label>
+        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <input type="text" v-model="form.detalle" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('detalle'), 'form-control-success': fields.detalle && fields.detalle.valid}" id="detalle" name="detalle" placeholder="{{ trans('admin.producto.columns.detalle') }}">
+        <div v-if="errors.has('detalle')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('detalle') }}</div>
+    </div>
+</div>
+
+<div class="form-group row align-items-center" :class="{'has-danger': errors.has('urlimagen'), 'has-success': fields.urlimagen && fields.urlimagen.valid }">
+    <label for="urlimagen" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">URL de Imagen</label>
+        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+        <input type="text" v-model="form.urlimagen" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('urlimagen'), 'form-control-success': fields.urlimagen && fields.urlimagen.valid}" id="urlimagen" name="urlimagen">
+        <div v-if="errors.has('urlimagen')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('urlimagen') }}</div>
+    </div>
+</div>
+
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('tipo'), 'has-success': fields.tipo && fields.tipo.valid }">
     <label for="tipo" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.producto.columns.tipo') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
@@ -30,13 +46,7 @@
     </div>
 </div>
 
-<div class="form-group row align-items-center" :class="{'has-danger': errors.has('imagen'), 'has-success': fields.imagen && fields.imagen.valid }">
-    <label for="imagen" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">URL de Imagen</label>
-        <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.imagen" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('imagen'), 'form-control-success': fields.imagen && fields.imagen.valid}" id="imagen" name="imagen" placeholder="Url de la Imagen">
-        <div v-if="errors.has('imagen')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('imagen') }}</div>
-    </div>
-</div>
+
 
 <div class="form-group row align-items-center">
     <label for="image" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Imagen</label>

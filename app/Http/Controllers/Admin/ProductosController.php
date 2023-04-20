@@ -37,10 +37,10 @@ class ProductosController extends Controller{
             $request,
 
             // set columns to query
-            ['id', 'descripcion', 'tipo', 'precio', 'cantidad','imagen'],
+            ['id', 'descripcion', 'detalle','urlimagen','tipo', 'precio', 'cantidad','imagen'],
 
             // set columns to searchIn
-            ['id', 'descripcion', 'tipo']
+            ['id', 'descripcion','urlimagen','tipo','detalle']
         );
 
         if ($request->ajax()) {

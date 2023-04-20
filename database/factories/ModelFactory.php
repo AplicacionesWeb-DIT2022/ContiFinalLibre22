@@ -87,6 +87,39 @@ $factory->define(App\Models\Post::class, static function (Faker\Generator $faker
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Models\Productox::class, static function (Faker\Generator $faker) {
     return [
+        'descripcion' => $faker->sentence,
+        'tipo' => $faker->sentence,
+        'precio' => $faker->randomFloat,
+        'cantidad' => $faker->randomNumber(5),
+        'urlimagen' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Mercaderium::class, static function (Faker\Generator $faker) {
+    return [
+        'descripcion' => $faker->sentence,
+        'detalle' => $faker->sentence,
+        'urlimagen' => $faker->sentence,
+        'tipo' => $faker->sentence,
+        'precio' => $faker->randomFloat,
+        'cantidad' => $faker->randomNumber(5),
+        
+        
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Producto::class, static function (Faker\Generator $faker) {
+    return [
+        'descripcion' => $faker->sentence,
+        'detalle' => $faker->sentence,
+        'urlimagen' => $faker->sentence,
+        'tipo' => $faker->sentence,
+        'precio' => $faker->randomFloat,
+        'cantidad' => $faker->randomNumber(5),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
         
         
     ];

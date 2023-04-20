@@ -24,6 +24,8 @@ class Producto extends Model implements HasMedia{
     protected $fillable = [
         'descripcion',
         'tipo',
+        'detalle',
+        'urlimagen',
         'precio',
         'cantidad'
     ];    
@@ -40,6 +42,8 @@ class Producto extends Model implements HasMedia{
         $producto = new \stdClass;
         $producto->id = $this->id;
         $producto->descripcion = $this->descripcion;
+        $producto->detalle = $this->detalle;
+        $producto->urlimagen = $this->urlimagen;
         $producto->tipo = $this->tipo;
         $producto->precio = $this->precio;
         $producto->cantidad = $this->cantidad;
