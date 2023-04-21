@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+ 
 use Illuminate\Database\Eloquent\Model;
 use Brackets\Media\HasMedia\ProcessMediaTrait;
 use Brackets\Media\HasMedia\HasMediaThumbsTrait;

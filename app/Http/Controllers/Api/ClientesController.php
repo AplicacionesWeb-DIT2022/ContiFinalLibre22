@@ -20,6 +20,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Spatie\FlareClient\Api;
+use Illuminate\Support\Facades\Log;
 
 
 class ClientesController extends Controller{
@@ -30,6 +31,10 @@ class ClientesController extends Controller{
      * @return array|Factory|View
      */
     public function index(IndexCliente $request){
+        
+        Log::info("messagXXXXXXXXXXXXXX");
+        Log::info("XXXXXXXXXXXXXX");
+
         $data['clientes']=Cliente::all();
         return json_encode($data);
         // return response()->json([$data], 200);  
