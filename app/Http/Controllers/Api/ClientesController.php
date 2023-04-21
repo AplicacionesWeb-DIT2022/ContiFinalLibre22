@@ -19,6 +19,8 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Spatie\FlareClient\Api;
+
 
 class ClientesController extends Controller{
     public function index(IndexCliente $request){

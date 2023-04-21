@@ -47,8 +47,6 @@ class Producto extends Model implements HasMedia{
         $producto->tipo = $this->tipo;
         $producto->precio = $this->precio;
         $producto->cantidad = $this->cantidad;
-        // getMediaUrlsAttribute();
-
         return $producto;
     }
 
