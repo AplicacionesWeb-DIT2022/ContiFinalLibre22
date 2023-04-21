@@ -33,16 +33,8 @@ class ProductosController extends Controller{
      * @return array|Factory|View
      */
     public function index(){
-        // $data['productos']=Producto::paginate(100);
         $data['productos'] = Producto::all();
-        // $ListaProducto = array();
-        // foreach($data['productos'] as $producto){
-        //         array_push($ListaProducto, $producto->toJsonAPI());
-        //     }
         return json_encode($data);
-        // return response()->json(array("productos"=>$ListaProducto));
-
-        // return response()->json(['success' => true, 'admin.producto.index' => $data], 200);
     }
 
     

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Cliente\BulkDestroyCliente;
@@ -23,9 +23,18 @@ use Spatie\FlareClient\Api;
 
 
 class ClientesController extends Controller{
+     /**
+     * Display a listing of the resource.
+     *
+     * @param IndexCliente $request
+     * @return array|Factory|View
+     */
     public function index(IndexCliente $request){
-        $data['clientes']=Cliente::paginate(100);
-        return response()->json([$data], 200);   
+        $data['clientes']=Cliente::all();
+        return json_encode($data);
+        // return response()->json([$data], 200);  
+        // $data['productos'] = Producto::all();
+ 
     }
 
     /**
@@ -87,7 +96,7 @@ class ClientesController extends Controller{
     {
         $this->authorize('admin.cliente.edit', $cliente);
 
-
+ 
         return view('admin.cliente.edit', [
             'cliente' => $cliente,
         ]);

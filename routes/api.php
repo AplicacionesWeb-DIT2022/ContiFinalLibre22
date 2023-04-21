@@ -9,6 +9,6 @@ use App\Http\Controllers\Api\ClientesController;
 
 Route::get('/producto', [ProductosController::class, 'index']);
 
-Route::get('/clientes', [ClientesController::class, 'index']);
+Route::get('/cliente', [ClientesController::class, 'index']);
 
 Route::get('/lugare', [LugaresController::class, 'index']);
