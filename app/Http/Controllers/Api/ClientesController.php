@@ -20,39 +20,10 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
-class ClientesController extends Controller
-{
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @param IndexCliente $request
-     * @return array|Factory|View
-     */
-    public function index(IndexCliente $request)
-    {
-        // create and AdminListing instance for a specific model and
-        $data = AdminListing::create(Cliente::class)->processRequestAndGet(
-            // pass the request with params
-            $request,
-
-            // set columns to query
-            ['id', 'nombre', 'apellido', 'telefono', 'direccion', 'email'],
-
-            // set columns to searchIn
-            ['id', 'nombre', 'apellido', 'telefono', 'direccion', 'email']
-        );
-
-        if ($request->ajax()) {
-            if ($request->has('bulk')) {
-                return [
-                    'bulkItems' => $data->pluck('id')
-                ];
-            }
-            return ['data' => $data];
-        }
-
-        return view('admin.cliente.index', ['data' => $data]);
+class ClientesController extends Controller{
+    public function index(IndexCliente $request){
+        $data['clientes']=Cliente::paginate(100);
+        return response()->json([$data], 200);   
     }
 
     /**
