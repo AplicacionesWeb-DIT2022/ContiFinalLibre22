@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>App Web 2022</title>
+        <title>App Web 2023</title>
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <!-- Styles -->
@@ -35,7 +35,7 @@
                 </div>
                 <div>
                     <span class="text-white dark:text-white" style="font-size: 42px; margin: 21px 0;">
-                        AppWeb 2022 - UNPSJB</span>
+                        AppWeb 2023 - UNPSJB</span>
                         <div>
                             <span class="text-white dark:text-white" style="font-size: 22px; margin: 11px 0;">
                                 Catedra - Martinez Diego - Ingravallo Gabriel</span>
