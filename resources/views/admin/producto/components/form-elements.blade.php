@@ -46,8 +46,6 @@
     </div>
 </div>
 
-
-
 <div class="form-group row align-items-center">
     <label for="image" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">Imagen</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
