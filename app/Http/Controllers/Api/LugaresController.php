@@ -26,7 +26,7 @@ use Spatie\FlareClient\Api;
 
 class LugaresController extends Controller
 {
-
+ 
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +35,9 @@ class LugaresController extends Controller
      */
     public function index(){
         $data['lugares']=Lugare::paginate(100);
-        return response()->json(['success' => true, 'admin.lugare.index' => $data], 200);
+        // return response()->json(['success' => true, 'admin.lugare.index' => $data], 200);
+        return json_encode($data);
+
     }
 
     /**
