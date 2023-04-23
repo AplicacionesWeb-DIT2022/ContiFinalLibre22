@@ -11,25 +11,3 @@ gabriel123
 
 diegomar@admin.com
 diego123
-
-
-# Pasos
-
-heroku login
-heroku git:clone -a bakend-final-libre-conti
-cd bakend-final-libre-conti
-git commit -am "make it better2"
-git push heroku master
-cd ..
-git add .
-git commit -m "make it better2"
-git push heroku master
-git push heroku main
-
-
-PS C:\xampp\htdocs\ContiFinalLibre22> heroku config
-=== bakend-final-libre-conti Config Vars
-APP_KEY:                      base64:kEYC2O+AB6zJn7LLcX7CM5fPRrKbWvVLVbrZuP3NeP8=
-DATABASE_URL:                 postgres://mazxpvsasvgcqs:facec005283a54eb2280ee91ea249f92a0f4c2bcfcecbc26b5265e866a7751a3@ec2-54-234-13-16.compute-1.amazonaws.com:5432/d64p2jiu8nev2l
-DB_CONNECTION:                pgsql
-HEROKU_POSTGRESQL_SILVER_URL: postgres://pnpergtlsrnzht:5656dee2bc0fa5e987eb556ab3dde5854d38c02ec84345f824bf84185055a10a@ec2-107-21-67-46.compute-1.amazonaws.com:5432/dd1fniuf2t18qm

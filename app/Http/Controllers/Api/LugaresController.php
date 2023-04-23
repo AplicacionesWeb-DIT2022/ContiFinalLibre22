@@ -35,8 +35,7 @@ class LugaresController extends Controller
      */
     public function index(){
         $data['lugares']=Lugare::paginate(100);
-        Log::debug("XXXXXXXXXXXXXX");
-        return response()->json([$data], 200);
+        return response()->json(['success' => true, 'admin.lugare.index' => $data], 200);
     }
 
     /**

@@ -11,7 +11,6 @@ use App\Http\Requests\Admin\Producto\UpdateProducto;
 use App\Models\Producto;
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
-use Validator;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
@@ -25,7 +24,9 @@ use Illuminate\Support\Facades\Log;
 
 use Spatie\FlareClient\Api;
 
-class ProductosController extends Controller{
+class ProductosController extends Controller
+{
+
     /**
      * Display a listing of the resource.
      *
@@ -33,8 +34,10 @@ class ProductosController extends Controller{
      * @return array|Factory|View
      */
     public function index(){
-        $data['productos'] = Producto::all();
+        // $data['productos']=Producto::paginate(100);
+        $data['productos']= Producto::all();
         return json_encode($data);
+        // return response()->json(['success' => true, 'admin.producto.index' => $data], 200);
     }
 
     
@@ -63,12 +66,12 @@ class ProductosController extends Controller{
         $sanitized = $request->getSanitized();
 
         // Store the Producto
-        // $producto = Producto::create($sanitized);
-        $producto = Producto::create($request->validated());
+        $producto = Producto::create($sanitized);
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/productos'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
+
         return redirect('admin/productos');
     }
 
@@ -82,6 +85,8 @@ class ProductosController extends Controller{
     public function show(Producto $producto)
     {
         $this->authorize('admin.producto.show', $producto);
+
+        // TODO your code goes here
     }
 
     /**
@@ -94,6 +99,8 @@ class ProductosController extends Controller{
     public function edit(Producto $producto)
     {
         $this->authorize('admin.producto.edit', $producto);
+
+
         return view('admin.producto.edit', [
             'producto' => $producto,
         ]);

@@ -28,10 +28,9 @@ class StoreProducto extends FormRequest
         return [
             'descripcion' => ['required', 'string'],
             'tipo' => ['required', 'string'],
-            'detalle' => ['string'],
-            'urlimage' => ['string'],
             'precio' => ['required', 'numeric'],
             'cantidad' => ['required', 'integer'],
+            
         ];
     }
 

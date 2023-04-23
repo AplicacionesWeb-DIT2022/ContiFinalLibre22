@@ -51,11 +51,10 @@
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.producto.columns.id') }}</th>
                                         <th is='sortable' :column="'descripcion'">{{ trans('admin.producto.columns.descripcion') }}</th>
-                                        <th is='sortable' :column="'detalle'">{{ trans('admin.producto.columns.detalle') }}</th>
                                         <th is='sortable' :column="'tipo'">{{ trans('admin.producto.columns.tipo') }}</th>
                                         <th is='sortable' :column="'precio'">{{ trans('admin.producto.columns.precio') }}</th>
                                         <th is='sortable' :column="'cantidad'">{{ trans('admin.producto.columns.cantidad') }}</th>
-                                        <th is='sortable' :column="'urlimagen'">{{ trans('admin.producto.columns.urlimagen') }}</th>
+
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
@@ -80,11 +79,10 @@
 
                                     <td>@{{ item.id }}</td>
                                         <td>@{{ item.descripcion }}</td>
-                                        <td>@{{ item.detalle }}</td>
                                         <td>@{{ item.tipo }}</td>
                                         <td>@{{ item.precio }}</td>
                                         <td>@{{ item.cantidad }}</td>
-                                        <td>@{{ item.urlimagen }}</td>                                        
+                                        
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">

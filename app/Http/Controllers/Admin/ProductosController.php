@@ -20,9 +20,9 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
-use Intervention\Image\Facades\Image;
+class ProductosController extends Controller
+{
 
-class ProductosController extends Controller{
     /**
      * Display a listing of the resource.
      *
@@ -37,10 +37,10 @@ class ProductosController extends Controller{
             $request,
 
             // set columns to query
-            ['id', 'descripcion', 'detalle','urlimagen','tipo', 'precio', 'cantidad','imagen'],
+            ['id', 'descripcion', 'tipo', 'precio', 'cantidad'],
 
             // set columns to searchIn
-            ['id', 'descripcion','urlimagen','tipo','detalle']
+            ['id', 'descripcion', 'tipo']
         );
 
         if ($request->ajax()) {
@@ -65,9 +65,7 @@ class ProductosController extends Controller{
     {
         $this->authorize('admin.producto.create');
 
-        return view('admin.producto.create', [
-            'producto' => new Producto()
-        ]);
+        return view('admin.producto.create');
     }
 
     /**
@@ -82,24 +80,7 @@ class ProductosController extends Controller{
         $sanitized = $request->getSanitized();
 
         // Store the Producto
-        // $producto = Producto::create($sanitized);
-        $producto = Producto::create($request->validated());
-
-        // // Obtener la imagen del formulario
-        // $imagen = $request->file('galery');
-        // // Crear una instancia de Intervention Image
-        // $img = Image::make($imagen);
-        // // Aplicar manipulaciones a la imagen (por ejemplo, redimensionar, recortar, etc.)
-        // $img->resize(300, 200);
-        // // Guardar la imagen en el sistema de archivos
-        // $ruta = 'c://PROYECTO/imagen/' . time() . '.' . $imagen->getClientOriginalExtension();
-        // $img->save($ruta);
-        // // Guardar la ruta de la imagen en la base de datos u otro lugar necesario
-
-        // // Retornar una respuesta
-        // // return response()->json(['ruta' => $ruta]);
-        // Log::info('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
-        // Log::info($ruta);
+        $producto = Producto::create($sanitized);
 
         if ($request->ajax()) {
             return ['redirect' => url('admin/productos'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];

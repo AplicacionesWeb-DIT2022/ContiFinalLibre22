@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d518b892d832d34474350278e1c7e716",
+    "content-hash": "257ece042f0809a1c76adda0f86c76e7",
     "packages": [
         {
             "name": "brackets/admin-auth",
@@ -394,16 +394,16 @@
         },
         {
             "name": "brackets/craftable",
-            "version": "v8.0.1",
+            "version": "8.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BRACKETS-by-TRIAD/craftable.git",
-                "reference": "221fabfaa366a4942a4b9938f56d50e93d39f2b1"
+                "reference": "8d1e78aa37a8e7911ee4a8f711863b3eb2a81190"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BRACKETS-by-TRIAD/craftable/zipball/221fabfaa366a4942a4b9938f56d50e93d39f2b1",
-                "reference": "221fabfaa366a4942a4b9938f56d50e93d39f2b1",
+                "url": "https://api.github.com/repos/BRACKETS-by-TRIAD/craftable/zipball/8d1e78aa37a8e7911ee4a8f711863b3eb2a81190",
+                "reference": "8d1e78aa37a8e7911ee4a8f711863b3eb2a81190",
                 "shasum": ""
             },
             "require": {
@@ -476,7 +476,7 @@
             ],
             "support": {
                 "issues": "https://github.com/BRACKETS-by-TRIAD/craftable/issues",
-                "source": "https://github.com/BRACKETS-by-TRIAD/craftable/tree/v8.0.1"
+                "source": "https://github.com/BRACKETS-by-TRIAD/craftable/tree/8.0.0"
             },
             "funding": [
                 {
@@ -484,7 +484,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-08T16:06:18+00:00"
+            "time": "2022-03-17T15:48:34+00:00"
         },
         {
             "name": "brackets/media",
@@ -696,87 +696,6 @@
                 }
             ],
             "time": "2022-08-10T22:54:19+00:00"
-        },
-        {
-            "name": "composer/semver",
-            "version": "3.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/3953f23262f2bff1919fc82183ad9acb13ff62c9",
-                "reference": "3953f23262f2bff1919fc82183ad9acb13ff62c9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^1.4",
-                "symfony/phpunit-bridge": "^4.2 || ^5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Semver\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
-            "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
-            ],
-            "support": {
-                "irc": "irc://irc.freenode.org/composer",
-                "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.3.2"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2022-04-01T19:23:25+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -2127,22 +2046,22 @@
         },
         {
             "name": "laravel/tinker",
-            "version": "v2.7.2",
+            "version": "v2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "dff39b661e827dae6e092412f976658df82dbac5"
+                "reference": "04a2d3bd0d650c0764f70bf49d1ee39393e4eb10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/dff39b661e827dae6e092412f976658df82dbac5",
-                "reference": "dff39b661e827dae6e092412f976658df82dbac5",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/04a2d3bd0d650c0764f70bf49d1ee39393e4eb10",
+                "reference": "04a2d3bd0d650c0764f70bf49d1ee39393e4eb10",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^6.0|^7.0|^8.0|^9.0",
-                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0",
-                "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/console": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
                 "php": "^7.2.5|^8.0",
                 "psy/psysh": "^0.10.4|^0.11.1",
                 "symfony/var-dumper": "^4.3.4|^5.0|^6.0"
@@ -2152,7 +2071,7 @@
                 "phpunit/phpunit": "^8.5.8|^9.3.3"
             },
             "suggest": {
-                "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0|^9.0)."
+                "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0|^9.0|^10.0)."
             },
             "type": "library",
             "extra": {
@@ -2189,9 +2108,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/tinker/issues",
-                "source": "https://github.com/laravel/tinker/tree/v2.7.2"
+                "source": "https://github.com/laravel/tinker/tree/v2.8.1"
             },
-            "time": "2022-03-23T12:38:24+00:00"
+            "time": "2023-02-15T16:40:09+00:00"
         },
         {
             "name": "league/commonmark",
@@ -2595,28 +2514,27 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "3.1.48",
+            "version": "3.1.44",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SpartnerNL/Laravel-Excel.git",
-                "reference": "6d0fe2a1d195960c7af7bf0de760582da02a34b9"
+                "reference": "289c3320982510dacfe0dd00de68061a2b7f4a43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SpartnerNL/Laravel-Excel/zipball/6d0fe2a1d195960c7af7bf0de760582da02a34b9",
-                "reference": "6d0fe2a1d195960c7af7bf0de760582da02a34b9",
+                "url": "https://api.github.com/repos/SpartnerNL/Laravel-Excel/zipball/289c3320982510dacfe0dd00de68061a2b7f4a43",
+                "reference": "289c3320982510dacfe0dd00de68061a2b7f4a43",
                 "shasum": ""
             },
             "require": {
-                "composer/semver": "^3.3",
                 "ext-json": "*",
-                "illuminate/support": "5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/support": "5.8.*|^6.0|^7.0|^8.0|^9.0",
                 "php": "^7.0|^8.0",
                 "phpoffice/phpspreadsheet": "^1.18",
-                "psr/simple-cache": "^1.0|^2.0|^3.0"
+                "psr/simple-cache": "^1.0|^2.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.0|^7.0|^8.0",
+                "orchestra/testbench": "^6.0|^7.0",
                 "predis/predis": "^1.1"
             },
             "type": "library",
@@ -2659,7 +2577,7 @@
             ],
             "support": {
                 "issues": "https://github.com/SpartnerNL/Laravel-Excel/issues",
-                "source": "https://github.com/SpartnerNL/Laravel-Excel/tree/3.1.48"
+                "source": "https://github.com/SpartnerNL/Laravel-Excel/tree/3.1.44"
             },
             "funding": [
                 {
@@ -2671,7 +2589,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-22T21:01:38+00:00"
+            "time": "2022-10-14T20:01:10+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -7528,16 +7446,16 @@
     "packages-dev": [
         {
             "name": "brackets/admin-generator",
-            "version": "v6.2.1",
+            "version": "6.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BRACKETS-by-TRIAD/admin-generator.git",
-                "reference": "63099d773acdcb0139fde5d8537c5b1117d0aac2"
+                "reference": "49fa6515b0d832106be2cd21a18db4698ec93cb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BRACKETS-by-TRIAD/admin-generator/zipball/63099d773acdcb0139fde5d8537c5b1117d0aac2",
-                "reference": "63099d773acdcb0139fde5d8537c5b1117d0aac2",
+                "url": "https://api.github.com/repos/BRACKETS-by-TRIAD/admin-generator/zipball/49fa6515b0d832106be2cd21a18db4698ec93cb3",
+                "reference": "49fa6515b0d832106be2cd21a18db4698ec93cb3",
                 "shasum": ""
             },
             "require": {
@@ -7616,9 +7534,9 @@
                 "make"
             ],
             "support": {
-                "source": "https://github.com/BRACKETS-by-TRIAD/admin-generator/tree/v6.2.1"
+                "source": "https://github.com/BRACKETS-by-TRIAD/admin-generator/tree/6.2.0"
             },
-            "time": "2023-02-02T08:29:49+00:00"
+            "time": "2022-03-17T15:49:42+00:00"
         },
         {
             "name": "doctrine/cache",

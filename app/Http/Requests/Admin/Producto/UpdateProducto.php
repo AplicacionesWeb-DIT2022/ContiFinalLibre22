@@ -28,10 +28,9 @@ class UpdateProducto extends FormRequest
         return [
             'descripcion' => ['sometimes', 'string'],
             'tipo' => ['sometimes', 'string'],
-            'detalle' => ['string'],
-            'urlimagen' => ['string'],
             'precio' => ['sometimes', 'numeric'],
-            'cantidad' => ['sometimes', 'integer']
+            'cantidad' => ['sometimes', 'integer'],
+            
         ];
     }
 

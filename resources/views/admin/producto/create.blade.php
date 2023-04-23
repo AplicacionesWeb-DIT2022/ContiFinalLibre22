@@ -29,8 +29,14 @@
                         {{ trans('brackets/admin-ui::admin.btn.save') }}
                     </button>
                 </div>
+                
             </form>
+
         </producto-form>
+
         </div>
+
         </div>
+
+    
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Cliente\BulkDestroyCliente;
@@ -19,27 +19,40 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use Spatie\FlareClient\Api;
-use Illuminate\Support\Facades\Log;
 
+class ClientesController extends Controller
+{
 
-class ClientesController extends Controller{
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @param IndexCliente $request
      * @return array|Factory|View
      */
-    public function index(IndexCliente $request){
-        
-        Log::info("messagXXXXXXXXXXXXXX");
-        Log::info("XXXXXXXXXXXXXX");
+    public function index(IndexCliente $request)
+    {
+        // create and AdminListing instance for a specific model and
+        $data = AdminListing::create(Cliente::class)->processRequestAndGet(
+            // pass the request with params
+            $request,
 
-        $data['clientes']=Cliente::all();
-        return json_encode($data);
-        // return response()->json([$data], 200);  
-        // $data['productos'] = Producto::all();
- 
+            // set columns to query
+            ['id', 'nombre', 'apellido', 'telefono', 'direccion', 'email'],
+
+            // set columns to searchIn
+            ['id', 'nombre', 'apellido', 'telefono', 'direccion', 'email']
+        );
+
+        if ($request->ajax()) {
+            if ($request->has('bulk')) {
+                return [
+                    'bulkItems' => $data->pluck('id')
+                ];
+            }
+            return ['data' => $data];
+        }
+
+        return view('admin.cliente.index', ['data' => $data]);
     }
 
     /**
@@ -101,7 +114,7 @@ class ClientesController extends Controller{
     {
         $this->authorize('admin.cliente.edit', $cliente);
 
- 
+
         return view('admin.cliente.edit', [
             'cliente' => $cliente,
         ]);

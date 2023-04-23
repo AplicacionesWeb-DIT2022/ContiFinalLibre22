@@ -7,13 +7,11 @@ Vue.component('producto-form', {
             form: {
                 descripcion:  '' ,
                 tipo:  '' ,
-                urlimagen: '' ,
                 precio:  '' ,
                 cantidad:  '' ,
-                title:  this.getLocalizedFormDefaults(),
-                perex:  this.getLocalizedFormDefaults()
-            },
-            mediaCollections: ['gallery']
+                
+            }
         }
     }
-}); 
+
+});
