@@ -228,58 +228,5 @@ return [
         ],
     ],
 
-    'producto' => [
-        'title' => 'Productos',
-
-        'actions' => [
-            'index' => 'Productos',
-            'create' => 'New Producto',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            'descripcion' => 'Descripcion',
-            'tipo' => 'Tipo',
-            'precio' => 'Precio',
-            'cantidad' => 'Cantidad',
-            
-        ],
-    ],
-
-    'mercaderium' => [
-        'title' => 'Mercaderia',
-
-        'actions' => [
-            'index' => 'Mercaderia',
-            'create' => 'New Mercaderium',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            
-        ],
-    ],
-
-    'producto' => [
-        'title' => 'Productos',
-
-        'actions' => [
-            'index' => 'Productos',
-            'create' => 'New Producto',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            'descripcion' => 'Descripcion',
-            'tipo' => 'Tipo',
-            'precio' => 'Precio',
-            'cantidad' => 'Cantidad',
-            
-        ],
-    ],
-
     // Do not delete me :) I'm used for auto-generation
 ];

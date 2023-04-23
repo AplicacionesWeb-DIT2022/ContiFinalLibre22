@@ -90,33 +90,3 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
-
-/* Auto-generated admin routes */
-Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('productos')->name('productos/')->group(static function() {
-            Route::get('/',                                             'ProductosController@index')->name('index');
-            Route::get('/create',                                       'ProductosController@create')->name('create');
-            Route::post('/',                                            'ProductosController@store')->name('store');
-            Route::get('/{producto}/edit',                              'ProductosController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'ProductosController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{producto}',                                  'ProductosController@update')->name('update');
-            Route::delete('/{producto}',                                'ProductosController@destroy')->name('destroy');
-        });
-    });
-});
-
-/* Auto-generated admin routes */
-Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('mercaderia')->name('mercaderia/')->group(static function() {
-            Route::get('/',                                             'MercaderiaController@index')->name('index');
-            Route::get('/create',                                       'MercaderiaController@create')->name('create');
-            Route::post('/',                                            'MercaderiaController@store')->name('store');
-            Route::get('/{mercaderium}/edit',                           'MercaderiaController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'MercaderiaController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{mercaderium}',                               'MercaderiaController@update')->name('update');
-            Route::delete('/{mercaderium}',                             'MercaderiaController@destroy')->name('destroy');
-        });
-    });
-});

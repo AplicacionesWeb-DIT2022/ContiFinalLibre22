@@ -7,4 +7,3 @@ import './puntos-ventum';
 import './locale';
 import './lugare';
 import './cliente';
-import './mercaderium';
