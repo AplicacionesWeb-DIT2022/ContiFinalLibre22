@@ -76,3 +76,23 @@ $factory->define(App\Models\Cliente::class, static function (Faker\Generator $fa
         
     ];
 });
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Producto::class, static function (Faker\Generator $faker) {
+    return [
+        'descripcion' => $faker->sentence,
+        'tipo' => $faker->sentence,
+        'precio' => $faker->randomFloat,
+        'cantidad' => $faker->randomNumber(5),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Mercaderium::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
