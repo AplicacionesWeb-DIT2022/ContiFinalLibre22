@@ -51,7 +51,7 @@
 
                                         <th is='sortable' :column="'id'">{{ trans('admin.producto.columns.id') }}</th>
                                         <th is='sortable' :column="'descripcion'">{{ trans('admin.producto.columns.descripcion') }}</th>
-                                        <th is='sortable' :column="'tipo'">{{ trans('admin.producto.columns.tipo') }}</th>
+                                        <th is='sortable' :column="'tipo'">Url Imagen</th>
                                         <th is='sortable' :column="'precio'">{{ trans('admin.producto.columns.precio') }}</th>
                                         <th is='sortable' :column="'cantidad'">{{ trans('admin.producto.columns.cantidad') }}</th>
 
