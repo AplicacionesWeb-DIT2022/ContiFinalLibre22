@@ -228,20 +228,5 @@ return [
         ],
     ],
 
-    'producto' => [
-        'title' => 'Producto',
-
-        'actions' => [
-            'index' => 'Producto',
-            'create' => 'New Producto',
-            'edit' => 'Edit :name',
-        ],
-
-        'columns' => [
-            'id' => 'ID',
-            
-        ],
-    ],
-
     // Do not delete me :) I'm used for auto-generation
 ];

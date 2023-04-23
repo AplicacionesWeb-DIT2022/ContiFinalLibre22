@@ -49,11 +49,16 @@
                                             </label>
                                         </th>
 
+                                        <th is='sortable' :column="'id'">{{ trans('admin.producto.columns.id') }}</th>
+                                        <th is='sortable' :column="'descripcion'">{{ trans('admin.producto.columns.descripcion') }}</th>
+                                        <th is='sortable' :column="'tipo'">{{ trans('admin.producto.columns.tipo') }}</th>
+                                        <th is='sortable' :column="'precio'">{{ trans('admin.producto.columns.precio') }}</th>
+                                        <th is='sortable' :column="'cantidad'">{{ trans('admin.producto.columns.cantidad') }}</th>
 
                                         <th></th>
                                     </tr>
                                     <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="2">
+                                        <td class="bg-bulk-info d-table-cell text-center" colspan="7">
                                             <span class="align-middle font-weight-light text-dark">{{ trans('brackets/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/productos')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('brackets/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
                                                         href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('brackets/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
 
@@ -72,7 +77,12 @@
                                             </label>
                                         </td>
 
-                                    
+                                    <td>@{{ item.id }}</td>
+                                        <td>@{{ item.descripcion }}</td>
+                                        <td>@{{ item.tipo }}</td>
+                                        <td>@{{ item.precio }}</td>
+                                        <td>@{{ item.cantidad }}</td>
+                                        
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">

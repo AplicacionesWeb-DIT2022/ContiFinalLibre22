@@ -5,6 +5,10 @@ Vue.component('producto-form', {
     data: function() {
         return {
             form: {
+                descripcion:  '' ,
+                tipo:  '' ,
+                precio:  '' ,
+                cantidad:  '' ,
                 
             }
         }

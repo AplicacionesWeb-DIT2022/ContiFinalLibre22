@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('descripcion');
             $table->string('tipo');
-            $table->string('detalle');
-            $table->string('urlimagen');
             $table->double('precio');
             $table->integer('cantidad');
             $table->timestamps();
