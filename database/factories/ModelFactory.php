@@ -76,3 +76,10 @@ $factory->define(App\Models\Cliente::class, static function (Faker\Generator $fa
         
     ];
 });
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Producto::class, static function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});

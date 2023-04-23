@@ -26,10 +26,6 @@ class StoreProducto extends FormRequest
     public function rules(): array
     {
         return [
-            'descripcion' => ['required', 'string'],
-            'tipo' => ['required', 'string'],
-            'precio' => ['required', 'numeric'],
-            'cantidad' => ['required', 'integer'],
             
         ];
     }
