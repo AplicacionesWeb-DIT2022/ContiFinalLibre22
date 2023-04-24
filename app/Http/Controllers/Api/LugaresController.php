@@ -34,7 +34,7 @@ class LugaresController extends Controller
      * @return array|Factory|View
      */
     public function index(){
-        $data['lugares']=Lugare::paginate(100);
+        $data['lugares']=Lugare::all();
         // return response()->json(['success' => true, 'admin.lugare.index' => $data], 200);
         return json_encode($data);
 
