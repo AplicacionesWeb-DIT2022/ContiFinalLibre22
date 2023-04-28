@@ -16,7 +16,7 @@ class IndexProducto extends FormRequest
     {
         return Gate::allows('admin.producto.index');
     }
-
+ 
     /**
      * Get the validation rules that apply to the request.
      *
